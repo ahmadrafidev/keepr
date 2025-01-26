@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Keepr: Save and Revisit Your Favorite Blog, Effortlessly
 
-## Getting Started
+Keepr is your personal product bookmarking tool, designed for simplicity and inspiration. Easily save, organize, and revisit the products you love, all in one place.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Keepr: Save and Revisit Your Favorite Blog, Effortlessly](#keepr-save-and-revisit-your-favorite-blog-effortlessly)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Features](#features)
+  - [How It Works](#how-it-works)
+  - [End](#end)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Keepr is a lightweight and intuitive platform to help you bookmark and manage your favorite blogs or products. Whether you’re seeking inspiration, researching ideas, or keeping track of your interests, Keepr ensures your saved items are always accessible and well-organized.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Simple Bookmarking**: Quickly save blogs, articles, or product pages with just a click.
+- **Organized Collections**: Group your bookmarks into categories for better organization.
+- **Search and Filter**: Easily find specific bookmarks using search or filters.
+- **Responsive Design**: Accessible on any device, whether you’re on desktop or mobile.
+- **Revisit with Ease**: Keep all your favorite blogs or products in one place for quick reference.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## How It Works
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Save**: Bookmark your favorite blogs or products by adding their links.
+2. **Organize**: Categorize bookmarks into collections for better management.
+3. **Revisit**: Access your saved bookmarks anytime to revisit content or explore ideas.
+4. **Search**: Use the search bar or filters to quickly find specific bookmarks.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## End
+
+Keepr is the perfect companion for saving and revisiting the content that inspires you. With its intuitive design and powerful features, Keepr helps you stay organized and inspired, all in one place.
+
+Start building your personal library of favorites with Keepr today! 🚀
