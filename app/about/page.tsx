@@ -30,7 +30,7 @@ export default function About() {
               lose track of content that matters to you.
             </p>
             <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-              Whether you're researching, shopping, or just curating inspiring content, Keepr provides a seamless experience 
+              Whether you are researching, shopping, or just curating inspiring content, Keepr provides a seamless experience 
               to store, retrieve, and categorize your saved items efficiently.
             </p>
           </div>

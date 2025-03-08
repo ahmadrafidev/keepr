@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Code, Zap, Shield, Bookmark } from "lucide-react"
+import { Bookmark } from "lucide-react"
 
 export default function Home() {
   return (
