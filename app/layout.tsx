@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Keepr: Save and Revisit your Favorite Blog, Effortlessly.",
+  title: "Keepr",
   description: "Keepr is your personal product bookmarking tool, designed for simplicity and inspiration. Easily save, organize, and revisit the products you love, all in one place.",
 };
 
