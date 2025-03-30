@@ -5,11 +5,18 @@ import { Bookmark } from "lucide-react"
 export default function About() {
   return (
     <div className="flex min-h-screen flex-col items-center">
+      <div className="absolute inset-0 bg-grid-pattern z-0 [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]" 
+        style={{ 
+          backgroundImage: 'linear-gradient(to right, #f0f0f0 1px, transparent 1px), linear-gradient(to bottom, #f0f0f0 1px, transparent 1px)',
+          backgroundSize: '24px 24px'
+        }}
+        aria-hidden="true"
+      />
       <header className="container flex h-16 items-center justify-between p-8">
-        <div className="flex flex-row items-center gap-1 font-bold">
-          <Bookmark className="h-10 w-8" />
-          <span className="text-4xl tracking-tighter">Keepr</span>
-        </div>
+        <Link passHref href="/" className="flex flex-row items-center gap-1 font-bold">
+            <Bookmark className="h-10 w-8" />
+            <span className="text-4xl tracking-tighter">Keepr</span>
+        </Link>
         <div className="flex items-center gap-4">
           <Button size="lg">
             <Link href="/" className="text-sm font-medium hover:underline">
@@ -18,13 +25,13 @@ export default function About() {
           </Button>
         </div>
       </header>
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         <section className="container py-8 md:py-16 space-y-12">
           <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent">
               About Keepr
             </h1>
-            <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+            <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8" >
               Keepr is a simple yet powerful bookmarking tool that helps you save and organize your favorite blogs, 
               products, and articles with ease. Designed for minimalism and efficiency, Keepr ensures that you never 
               lose track of content that matters to you.
