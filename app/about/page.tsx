@@ -12,7 +12,7 @@ export default function About() {
         }}
         aria-hidden="true"
       />
-      <header className="container flex h-16 items-center justify-between p-8">
+      <header className="container flex h-20 items-center justify-between px-4 md:px-8 relative z-10">
         <Link passHref href="/" className="flex flex-row items-center gap-1 font-bold">
             <Bookmark className="h-10 w-8" />
             <span className="text-4xl tracking-tighter">Keepr</span>

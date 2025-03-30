@@ -13,7 +13,7 @@ export default function Home() {
         aria-hidden="true"
       />
 
-      <header className="container flex h-16 items-center justify-between p-8">
+      <header className="container flex h-20 items-center justify-between px-4 md:px-8 relative z-10">
         <Link passHref href="/" className="flex flex-row items-center gap-1 font-bold">
             <Bookmark className="h-10 w-8" />
             <span className="text-4xl tracking-tighter">Keepr</span>
@@ -38,7 +38,9 @@ export default function Home() {
             </p>
             <div className="flex items-center gap-4 pt-4">
               <Button size="lg" className="rounded-full px-8 shadow-md transition-all hover:shadow-lg">
-                Get Started
+                <Link href="/home" className="text-sm font-medium hover:underline">
+                  Get Started
+                </Link>
               </Button>
               <Button size="lg" variant="outline" className="rounded-full border-gray-200 px-8">
                 <Link href="/about">Learn More</Link>
