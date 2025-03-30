@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -43,16 +44,6 @@ const sampleBookmarks = [
     tags: ["office", "ergonomic", "furniture"],
     date: "2 weeks ago",
   },
-  {
-    id: 4,
-    title: "Quick 15-Minute Healthy Recipes",
-    url: "https://example.com/quick-recipes",
-    description: "Simple and nutritious recipes that can be prepared in just 15 minutes.",
-    image: "/placeholder.svg?height=200&width=400",
-    category: "recipe",
-    tags: ["food", "health", "quick"],
-    date: "3 weeks ago",
-  },
 ]
 
 export default function BookmarkList() {
@@ -62,7 +53,7 @@ export default function BookmarkList() {
   const filteredBookmarks =
     activeTab === "all" ? bookmarks : bookmarks.filter((bookmark) => bookmark.category === activeTab)
 
-  const handleDelete = (id) => {
+  const handleDelete = (id: number) => {
     setBookmarks(bookmarks.filter((bookmark) => bookmark.id !== id))
   }
 
@@ -92,10 +83,12 @@ export default function BookmarkList() {
             {filteredBookmarks.map((bookmark) => (
               <Card key={bookmark.id} className="overflow-hidden">
                 <div className="aspect-video w-full overflow-hidden">
-                  <img
+                  <Image
                     src={bookmark.image || "/placeholder.svg"}
                     alt={bookmark.title}
-                    className="h-full w-full object-cover transition-transform hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform hover:scale-105"
                   />
                 </div>
                 <CardHeader className="p-4 pb-0">

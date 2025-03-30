@@ -21,7 +21,7 @@ export function NewBookmarkForm() {
   const [url, setUrl] = useState("")
   const [category, setCategory] = useState("")
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log("New bookmark:", { url, category })
     setUrl("")
