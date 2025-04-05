@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { useState } from "react"
+
 import { Search, Bookmark, User } from "lucide-react"
 
 import { Input } from "@/components/ui/input"
