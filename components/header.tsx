@@ -1,9 +1,15 @@
 import Link from "next/link"
-
-import { Search, Bookmark } from "lucide-react"
+import { useState } from "react"
+import { Search, Bookmark, User } from "lucide-react"
 
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu"
 
 type HeaderProps = {
   searchQuery: string
@@ -19,20 +25,31 @@ export function Header({ searchQuery, setSearchQuery }: HeaderProps) {
           <div className="text-4xl tracking-tighter font-bold text-primary">Keepr</div>
           <span className="rounded-full bg-primary px-2 py-0.5 text-xs text-white">Beta</span>
         </Link>
+
         <div className="relative hidden w-full max-w-md md:block">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-          <Input 
-            type="search" 
-            placeholder="Find your saved bookmarks and more" 
-            className="w-full bg-gray-50 pl-8"  
+          <Input
+            type="search"
+            placeholder="Find your saved bookmarks and more"
+            className="w-full bg-gray-50 pl-8"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)} 
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
+
         <div className="flex items-center gap-2">
-          <Button size="sm" variant="ghost">
-            Settings
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="rounded-full">
+                <User />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem>Account Profile</DropdownMenuItem>
+              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuItem>Logout</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </header>
