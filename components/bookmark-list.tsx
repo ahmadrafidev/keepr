@@ -60,7 +60,7 @@ const sampleBookmarks = [
 ]
 
 export default function BookmarkList({ searchQuery = "" }: { searchQuery?: string }) {
-  const [bookmarks, setBookmarks] = useState(sampleBookmarks)
+  const [bookmarks, setBookmarks] = useState<Bookmark[]>(sampleBookmarks)
   const [activeTab, setActiveTab] = useState("all")
   const [viewMode, setViewMode] = useState<"card" | "list">("card")
 
