@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Clock, ExternalLink, Heart, MoreHorizontal, Tag } from "lucide-react"
+import { Clock, ExternalLink, Heart, MoreHorizontal, Tag, LayoutGrid, List } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 import { NewBookmarkForm } from "@/components/new-bookmark-form"
@@ -49,6 +49,7 @@ const sampleBookmarks = [
 export default function BookmarkList() {
   const [bookmarks, setBookmarks] = useState(sampleBookmarks)
   const [activeTab, setActiveTab] = useState("all")
+  const [viewMode, setViewMode] = useState<"card" | "list">("card")
 
   const filteredBookmarks =
     activeTab === "all" ? bookmarks : bookmarks.filter((bookmark) => bookmark.category === activeTab)
@@ -59,9 +60,9 @@ export default function BookmarkList() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-2xl font-bold">Your Bookmarks</h2>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Button variant="outline" size="sm">
             <Tag className="mr-2 h-4 w-4" />
             Manage Tags
@@ -70,72 +71,115 @@ export default function BookmarkList() {
         </div>
       </div>
 
-      <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="mb-4">
-          <TabsTrigger value="all">All</TabsTrigger>
-          <TabsTrigger value="article">Articles</TabsTrigger>
-          <TabsTrigger value="blog">Blogs</TabsTrigger>
-          <TabsTrigger value="product">Products</TabsTrigger>
-        </TabsList>
+      <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <div className="flex items-center justify-between flex-wrap gap-2 mb-4">
+          <TabsList className="flex gap-2">
+            <TabsTrigger value="all">All</TabsTrigger>
+            <TabsTrigger value="article">Articles</TabsTrigger>
+            <TabsTrigger value="blog">Blogs</TabsTrigger>
+            <TabsTrigger value="product">Products</TabsTrigger>
+          </TabsList>
+
+          <TabsList className="ml-auto flex gap-1">
+            <Button
+              variant={viewMode === "card" ? "default" : "ghost"}
+              size="icon"
+              onClick={() => setViewMode("card")}
+              aria-label="Card View"
+            >
+              <LayoutGrid className="h-4 w-4" />
+            </Button>
+            <Button
+              variant={viewMode === "list" ? "default" : "ghost"}
+              size="icon"
+              onClick={() => setViewMode("list")}
+              aria-label="List View"
+            >
+              <List className="h-4 w-4" />
+            </Button>
+          </TabsList>
+        </div>
 
         <TabsContent value={activeTab} className="mt-0">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            className={
+              viewMode === "card"
+                ? "grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+                : "space-y-4"
+            }
+          >
             {filteredBookmarks.map((bookmark) => (
-              <Card key={bookmark.id} className="overflow-hidden">
-                <div className="aspect-video w-full overflow-hidden">
+              <Card
+                key={bookmark.id}
+                className={viewMode === "list" ? "flex items-start gap-4" : "overflow-hidden"}
+              >
+                <div
+                  className={
+                    viewMode === "list"
+                      ? "relative w-40 h-28 flex-shrink-0"
+                      : "relative aspect-video w-full"
+                  }
+                >
                   <Image
                     src={bookmark.image || "/placeholder.svg"}
                     alt={bookmark.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform hover:scale-105"
+                    className="object-cover rounded-md"
                   />
                 </div>
-                <CardHeader className="p-4 pb-0">
-                  <div className="flex items-start justify-between">
-                    <h3 className="font-semibold line-clamp-1">{bookmark.title}</h3>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="icon" className="-mr-2 h-8 w-8">
-                          <MoreHorizontal className="h-4 w-4" />
-                          <span className="sr-only">More options</span>
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuItem>Edit</DropdownMenuItem>
-                        <DropdownMenuItem>Add Tags</DropdownMenuItem>
-                        <DropdownMenuItem>Move to Folder</DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => handleDelete(bookmark.id)}>Delete</DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </div>
-                  <div className="mt-1 flex items-center text-xs text-muted-foreground">
-                    <Clock className="mr-1 h-3 w-3" />
-                    <span>{bookmark.date}</span>
-                  </div>
-                </CardHeader>
-                <CardContent className="p-4 pt-2">
-                  <p className="text-sm text-muted-foreground line-clamp-2">{bookmark.description}</p>
-                  <div className="mt-3 flex flex-wrap gap-1">
-                    {bookmark.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex justify-between p-4 pt-0">
-                  <Button variant="ghost" size="sm" className="h-8 px-2">
-                    <Heart className="mr-1 h-4 w-4" />
-                    Favorite
-                  </Button>
-                  <Button variant="outline" size="sm" className="h-8 px-2" asChild>
-                    <a href={bookmark.url} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-1 h-4 w-4" />
-                      Visit
-                    </a>
-                  </Button>
-                </CardFooter>
+
+                <div className={viewMode === "list" ? "flex-1" : ""}>
+                  <CardHeader className="p-4 pb-0">
+                    <div className="flex items-start justify-between">
+                      <h3 className="font-semibold line-clamp-1">{bookmark.title}</h3>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="ghost" size="icon" className="-mr-2 h-8 w-8">
+                            <MoreHorizontal className="h-4 w-4" />
+                            <span className="sr-only">More options</span>
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                          <DropdownMenuItem>Edit</DropdownMenuItem>
+                          <DropdownMenuItem>Add Tags</DropdownMenuItem>
+                          <DropdownMenuItem>Move to Folder</DropdownMenuItem>
+                          <DropdownMenuItem onClick={() => handleDelete(bookmark.id)}>
+                            Delete
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </div>
+                    <div className="mt-1 flex items-center text-xs text-muted-foreground">
+                      <Clock className="mr-1 h-3 w-3" />
+                      <span>{bookmark.date}</span>
+                    </div>
+                  </CardHeader>
+
+                  <CardContent className="p-4 pt-2">
+                    <p className="text-sm text-muted-foreground line-clamp-2">{bookmark.description}</p>
+                    <div className="mt-3 flex flex-wrap gap-1">
+                      {bookmark.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+
+                  <CardFooter className="flex justify-between p-4 pt-0">
+                    <Button variant="ghost" size="sm" className="h-8 px-2">
+                      <Heart className="mr-1 h-4 w-4" />
+                      Favorite
+                    </Button>
+                    <Button variant="outline" size="sm" className="h-8 px-2" asChild>
+                      <a href={bookmark.url} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-1 h-4 w-4" />
+                        Visit
+                      </a>
+                    </Button>
+                  </CardFooter>
+                </div>
               </Card>
             ))}
           </div>
@@ -153,4 +197,3 @@ export default function BookmarkList() {
     </div>
   )
 }
-
