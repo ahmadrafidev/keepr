@@ -1,16 +1,29 @@
 "use client"
 
 import { useState } from "react"
+
 import Image from "next/image"
+
+import { Clock, ExternalLink, Heart, MoreHorizontal, Tag, LayoutGrid, List } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Clock, ExternalLink, Heart, MoreHorizontal, Tag, LayoutGrid, List } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 import { NewBookmarkForm } from "@/components/new-bookmark-form"
+
+type Bookmark = {
+  id: number
+  title: string
+  url: string
+  description: string
+  image: string
+  category: string
+  tags: string[]
+  date: string
+}
 
 const sampleBookmarks = [
   {
@@ -46,13 +59,18 @@ const sampleBookmarks = [
   },
 ]
 
-export default function BookmarkList() {
+export default function BookmarkList({ searchQuery = "" }: { searchQuery?: string }) {
   const [bookmarks, setBookmarks] = useState(sampleBookmarks)
   const [activeTab, setActiveTab] = useState("all")
   const [viewMode, setViewMode] = useState<"card" | "list">("card")
 
-  const filteredBookmarks =
-    activeTab === "all" ? bookmarks : bookmarks.filter((bookmark) => bookmark.category === activeTab)
+  const filteredBookmarks = bookmarks
+    .filter((bookmark) =>
+      activeTab === "all" ? true : bookmark.category === activeTab
+    )
+    .filter((bookmark) =>
+      bookmark.title.toLowerCase().includes(searchQuery.toLowerCase())
+    )
 
   const handleDelete = (id: number) => {
     setBookmarks(bookmarks.filter((bookmark) => bookmark.id !== id))
