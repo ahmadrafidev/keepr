@@ -72,7 +72,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="w-full py-8 border-t border-gray-200 dark:border-white/10 flex items-center justify-center relative z-10">
+      <footer className="w-full py-8 flex items-center justify-center relative z-10">
         <div className="flex flex-col items-center justify-center space-y-2 text-center text-sm text-gray-600 dark:text-gray-400">
           <p>
             Built with care by{" "}
