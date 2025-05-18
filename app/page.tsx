@@ -26,18 +26,22 @@ export default function Home() {
 
       <header className="container flex h-20 items-center justify-between px-4 md:px-8 relative z-10">
         <Link passHref href="/" className="flex flex-row items-center gap-1 font-bold">
-            <Bookmark className="h-10 w-8 text-gray-900 dark:text-white" />
-            <span className="text-4xl tracking-tighter text-gray-900 dark:text-white">Keepr</span>
+          <Bookmark className="h-10 w-8 text-gray-900 dark:text-white" />
+          <span className="text-4xl tracking-tighter text-gray-900 dark:text-white">Keepr</span>
         </Link>
         <div className="flex items-center gap-4">
-          <Button size="lg" variant="outline" className="border-gray-200 bg-white/50 text-gray-900 hover:bg-gray-100 dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20">
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-gray-200 bg-white/50 text-gray-900 hover:bg-gray-100 dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
+          >
             <Link href="/home" className="text-sm font-medium">
               Get Started
             </Link>
           </Button>
         </div>
       </header>
-      
+
       <main className="flex-1 relative z-10">
         <section className="container flex flex-col items-center justify-center py-16 md:py-28">
           <div className="flex max-w-[50rem] flex-col items-center space-y-6 text-center">
@@ -48,24 +52,35 @@ export default function Home() {
               A lightweight and intuitive platform to bookmark and manage your favorite content in one elegant space
             </p>
             <div className="flex items-center gap-4 pt-4">
-              <Button size="lg" className="rounded-full px-8 shadow-md transition-all hover:shadow-lg bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-white/90">
+              <Button
+                size="lg"
+                className="rounded-full px-8 shadow-md transition-all hover:shadow-lg bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-white/90"
+              >
                 <Link href="/home" className="text-sm font-medium">
                   Get Started
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 border-gray-200 bg-white/50 text-gray-900 hover:bg-gray-100 dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20">
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full px-8 border-gray-200 bg-white/50 text-gray-900 hover:bg-gray-100 dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
+              >
                 <Link href="/about">Learn More</Link>
               </Button>
             </div>
           </div>
         </section>
       </main>
-      
-      <footer className="py-8 relative z-10 w-full border-t border-gray-200 dark:border-white/10">
-        <div className="container flex flex-col items-center justify-center space-y-2 text-center text-sm text-gray-600 dark:text-gray-400">
+
+      <footer className="w-full py-8 border-t border-gray-200 dark:border-white/10 flex items-center justify-center relative z-10">
+        <div className="flex flex-col items-center justify-center space-y-2 text-center text-sm text-gray-600 dark:text-gray-400">
           <p>
             Built with care by{" "}
-            <Link href="https://x.com/rafiwiranaa" className="text-gray-900 hover:text-gray-700 dark:text-white dark:hover:text-white/80" aria-label="Visit Rafi's Twitter">
+            <Link
+              href="https://x.com/rafiwiranaa"
+              className="text-gray-900 hover:text-gray-700 dark:text-white dark:hover:text-white/80"
+              aria-label="Visit Rafi's Twitter"
+            >
               Rafi
             </Link>
           </p>
