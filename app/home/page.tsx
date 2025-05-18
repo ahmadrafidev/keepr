@@ -41,10 +41,10 @@ export default function Home() {
                 This is your new digital shelf—where articles, ideas, tools, and notes stay safe, tidy, and always within reach.
               </p>
               <p className="mb-6 text-muted-foreground text-lg">
-                Whether you're exploring something new or simply bookmarking things you love, Keepr is built to help you capture and come back—without the clutter.
+                Whether you&apos;re exploring something new or simply bookmarking things you love, Keepr is built to help you capture and come back—without the clutter.
               </p>
               <p className="mb-12 text-muted-foreground text-lg">
-                Take a look around. Add a few links. Make it yours. You'll feel at home in no time.
+                Take a look around. Add a few links. Make it yours. You&apos;ll feel at home in no time.
               </p>
             </div>
           </div>
