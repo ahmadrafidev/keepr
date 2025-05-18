@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Bookmark } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
           <span className="text-4xl tracking-tighter text-gray-900 dark:text-white">Keepr</span>
         </Link>
         <div className="flex items-center gap-4">
+          <ThemeToggle />
           <Button
             size="lg"
             variant="outline"
