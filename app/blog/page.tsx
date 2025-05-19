@@ -1,16 +1,16 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Writing | Keepr',
+  title: 'Blog | Keepr',
   description: 'Manage your articles and drafts',
 }
 
-export default function WritingPage() {
+export default function BlogPage() {
   return (
     <div className="container mx-auto py-8">
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Writing</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Blog</h1>
           <p className="text-muted-foreground">
             Manage your articles and drafts in one place
           </p>
@@ -33,7 +33,7 @@ export default function WritingPage() {
                     </p>
                   </div>
                   <button className="text-sm text-primary hover:underline">
-                    Continue writing
+                    View article
                   </button>
                 </div>
               ))}

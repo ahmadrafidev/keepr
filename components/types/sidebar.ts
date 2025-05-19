@@ -26,8 +26,8 @@ export const DEFAULT_SIDEBAR_CONFIG: SidebarSection[] = [
         description: 'Your dashboard'
       },
       { 
-        title: 'Writing', 
-        path: '/writing',
+        title: 'Blog', 
+        path: '/blog',
         icon: 'PenLine',
         description: 'Your articles and drafts'
       },
@@ -40,12 +40,68 @@ export const DEFAULT_SIDEBAR_CONFIG: SidebarSection[] = [
         title: 'Bookmarks', 
         path: '/bookmarks',
         icon: 'Bookmark',
+        description: 'Curated collection of interesting finds'
       },
       { 
         title: 'Stack', 
         path: '/stack',
         icon: 'Layers',
+        description: 'My technology stack and preferences'
       },
+      {
+        title: 'Reading List',
+        path: '/reading',
+        icon: 'BookOpen',
+        description: 'Articles, books, and resources that inspire me'
+      },
+      {
+        title: 'Learning',
+        path: '/learning',
+        icon: 'GraduationCap',
+        description: 'Current learning goals and resources'
+      },
+      {
+        title: 'Tools',
+        path: '/tools',
+        icon: 'Wrench',
+        description: 'My development toolkit and configurations'
+      },
+      {
+        title: 'Notes',
+        path: '/notes',
+        icon: 'StickyNote',
+        description: 'Personal knowledge base and quick thoughts'
+      },
+      {
+        title: 'Principles',
+        path: '/principles',
+        icon: 'Lightbulb',
+        description: 'Core development principles and philosophies'
+      },
+      {
+        title: 'Inspirations',
+        path: '/inspirations',
+        icon: 'Sparkles',
+        description: 'People and projects that inspire my work'
+      },
+      {
+        title: 'Experiments',
+        path: '/experiments',
+        icon: 'Flask',
+        description: 'Playground for ideas and proof of concepts'
+      },
+      {
+        title: 'Playlist',
+        path: '/playlist',
+        icon: 'Music',
+        description: 'Development-focused music and podcasts'
+      },
+      {
+        title: 'Setup',
+        path: '/setup',
+        icon: 'Monitor',
+        description: 'My development environment and hardware'
+      }
     ],
   },
   {

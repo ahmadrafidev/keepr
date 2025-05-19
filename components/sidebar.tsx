@@ -37,7 +37,7 @@ const SidebarClient = ({
       aria-label="Main navigation"
     >
       <div className="p-4 flex items-center justify-between">
-        <div className={`font-semibold text-lg ${isCollapsed ? 'hidden' : 'block'}`}>
+        <div className={`font-semibold text-2xl ${isCollapsed ? 'hidden' : 'block'}`}>
           Keepr
         </div>
         <Button
@@ -54,7 +54,7 @@ const SidebarClient = ({
         </Button>
       </div>
 
-      <SidebarContent className="py-4 flex-1">
+      <SidebarContent className="flex-1">
         {sections.map((section, sIdx) => (
           <SidebarGroup key={`section-${sIdx}`} className="mb-4">
             {!isCollapsed && section.title && (
