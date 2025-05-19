@@ -22,8 +22,8 @@ export default function CustomSidebar({ sidebarConfig }: CustomSidebarProps) {
   )
 
   return (
-    <Sidebar className="border-r">
-      <div className="p-4 flex items-center justify-between border-b">
+    <Sidebar>
+      <div className="p-4 flex items-center justify-between">
         <Link href="/" className="font-semibold text-lg hover:opacity-80 transition-opacity">
           Keepr
         </Link>
