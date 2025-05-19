@@ -42,11 +42,6 @@ export const DEFAULT_SIDEBAR_CONFIG: SidebarSection[] = [
         icon: 'Bookmark',
       },
       { 
-        title: 'AMA', 
-        path: '/ama',
-        icon: 'MessageCircle',
-      },
-      { 
         title: 'Stack', 
         path: '/stack',
         icon: 'Layers',
@@ -56,22 +51,69 @@ export const DEFAULT_SIDEBAR_CONFIG: SidebarSection[] = [
   {
     title: 'Projects',
     items: [
-      { title: 'Campsite', path: 'https://campsite.design', icon: 'Tent', external: true },
-      { title: 'Design Details', path: 'https://designdetails.fm', icon: 'ListChecks', external: true },
-      { title: 'Staff Design', path: 'https://staff.design', icon: 'Users', external: true },
-      { title: 'Figma Plugins', path: 'https://figma.com/@brian', icon: 'Figma', external: true },
-      { title: 'Security Checklist', path: 'https://securitychecklist.org', icon: 'ShieldCheck', external: true },
-      { title: 'Hacker News', path: 'https://news.ycombinator.com', icon: 'Newspaper', external: true },
-      { title: 'App Dissection', path: 'https://appdissection.com', icon: 'Microscope', external: true },
+      {
+        title: 'AstraUI',
+        path: 'https://www.astraui.design',
+        icon: 'LayoutDashboard',
+        description: 'A modern, scalable design system for web and mobile.',
+        external: true,
+      },
+      {
+        title: 'Lumen',
+        path: 'https://luumen.vercel.app',
+        icon: 'Eye',
+        description: 'Accessibility contrast checker for designers and devs.',
+        external: true,
+      },
+      {
+        title: 'Worxshop',
+        path: 'https://worxshop.vercel.app/',
+        icon: 'Tool',
+        description: 'Curated tools for creators, designers, and developers.',
+        external: true,
+      },
+      {
+        title: 'DevBook',
+        path: 'https://devnook.vercel.app/',
+        icon: 'Book',
+        description: 'A digital notebook of my software engineering journey.',
+        external: true,
+      },
+      {
+        title: 'Keepr',
+        path: 'https://keepr-eta.vercel.app/',
+        icon: 'BookmarkPlus',
+        description: 'A simple bookmarking tool for inspiration.',
+        external: true,
+      },
+      {
+        title: 'CV',
+        path: 'https://scho.vercel.app/',
+        icon: 'FileText',
+        description: 'Minimalist template for academic personal websites.',
+        external: true,
+      },
+      {
+        title: 'ProFile',
+        path: 'https://pro-file-web.vercel.app/',
+        icon: 'FileCheck2',
+        description: 'Generate ATS-ready resumes instantly.',
+        external: true,
+      },
+      {
+        title: 'WHITW',
+        path: 'https://whitw.vercel.app/',
+        icon: 'Search',
+        description: 'Search for news and information worldwide.',
+        external: true,
+      },
     ],
   },
   {
     title: 'Online',
     items: [
-      { title: 'Twitter', path: 'https://twitter.com', icon: 'Twitter', external: true },
-      { title: 'YouTube', path: 'https://youtube.com', icon: 'Youtube', external: true },
-      { title: 'GitHub', path: 'https://github.com', icon: 'Github', external: true },
-      { title: 'Figma', path: 'https://figma.com', icon: 'Figma', external: true },
+      { title: 'Twitter', path: 'https://x.com/rafiwiranaa', icon: 'Twitter', external: true },
+      { title: 'GitHub', path: 'https://github.com/ahmadrafidev', icon: 'Github', external: true },
     ],
   },
-] 
+];

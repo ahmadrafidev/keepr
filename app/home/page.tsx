@@ -1,35 +1,18 @@
 'use client'
 
-import { useState } from 'react'
 import { SidebarProvider } from '@/components/ui/sidebar'
 import CustomSidebar from '@/components/sidebar'
 import { Header } from '@/components/header'
+import { DEFAULT_SIDEBAR_CONFIG } from '@/components/types/sidebar'
 
 export default function Home() {
-  const [customSidebarConfig] = useState([
-    {
-      title: '',
-      items: [
-        { title: 'Home', path: '/home' },
-        { title: 'Writing', path: '/writing' },
-      ],
-    },
-    {
-      title: 'Me',
-      items: [
-        { title: 'Bookmarks', path: '/bookmarks' },
-        { title: 'AMA', path: '/ama' },
-      ],
-    },
-  ])
-
   return (
     <SidebarProvider>
       <div className="flex min-h-screen flex-col">
         <Header />
         <div className="flex flex-1">
           <div className="w-60 shrink-0">
-            <CustomSidebar sidebarConfig={customSidebarConfig} />
+            <CustomSidebar sidebarConfig={DEFAULT_SIDEBAR_CONFIG} />
           </div>
           <div className="flex-1 p-8">
             <div className="max-w-3xl mx-auto">
