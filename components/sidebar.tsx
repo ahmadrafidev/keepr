@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { ChevronLeft } from 'lucide-react'
+import { PanelLeft } from 'lucide-react'
 
 import {
   Sidebar,
@@ -35,7 +35,10 @@ const SidebarClient = ({
       }`}
       aria-label="Main navigation"
     >
-      <div className="p-4 flex items-center justify-end">
+      <div className="p-4 flex items-center justify-between">
+        <div className={`font-semibold text-lg ${isCollapsed ? 'hidden' : 'block'}`}>
+          Keepr
+        </div>
         <Button
           variant="ghost"
           size="icon"
@@ -43,7 +46,7 @@ const SidebarClient = ({
           onClick={onToggleCollapse}
           aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         >
-          <ChevronLeft 
+          <PanelLeft 
             className={`h-4 w-4 transition-transform ${isCollapsed ? 'rotate-180' : ''}`} 
             aria-hidden="true"
           />
