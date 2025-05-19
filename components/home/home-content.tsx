@@ -7,7 +7,7 @@ interface WelcomeContentProps {
 export function HomeContent({ className }: WelcomeContentProps) {
   return (
     <div className={cn("w-full max-w-3xl mx-auto", className)}>
-      <h1 className="text-4xl font-bold tracking-tight mb-6 bg-gradient-to-r from-gray-600 to-gray-800 bg-clip-text text-transparent">
+      <h1 className="text-4xl font-bold tracking-tight mb-6 bg-gradient-to-r from-gray-600 to-gray-800 bg-clip-text text-transparent dark:text-gray-100">
         Welcome to Keepr.
       </h1>
       <p className="mb-6 text-muted-foreground text-lg">
