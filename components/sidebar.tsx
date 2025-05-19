@@ -13,7 +13,6 @@ import {
 } from '@/components/ui/sidebar'
 import { CustomSidebarProps, DEFAULT_SIDEBAR_CONFIG } from './types/sidebar'
 import { ManageDialog } from './sidebar/manage-dialog'
-import { cn } from '@/lib/utils'
 import { NavigationItem } from './sidebar/navigation-item'
 
 export default function CustomSidebar({ sidebarConfig }: CustomSidebarProps) {

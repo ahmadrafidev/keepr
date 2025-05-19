@@ -6,7 +6,6 @@ import CustomSidebar from '@/components/sidebar'
 import { Header } from '@/components/header'
 
 export default function Home() {
-  const [searchQuery, setSearchQuery] = useState('')
   const [customSidebarConfig] = useState([
     {
       title: '',
@@ -27,7 +26,7 @@ export default function Home() {
   return (
     <SidebarProvider>
       <div className="flex min-h-screen flex-col">
-        <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        <Header />
         <div className="flex flex-1">
           <div className="w-60 shrink-0">
             <CustomSidebar sidebarConfig={customSidebarConfig} />

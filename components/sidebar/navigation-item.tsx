@@ -2,6 +2,7 @@ import Link from 'next/link'
 import * as Icons from 'lucide-react'
 import { SidebarMenuItem, SidebarMenuButton } from '@/components/ui/sidebar'
 import { SidebarItem } from '../types/sidebar'
+import { LucideIcon } from 'lucide-react'
 
 interface NavigationItemProps {
   item: SidebarItem
@@ -9,7 +10,7 @@ interface NavigationItemProps {
 }
 
 export function NavigationItem({ item, isActive }: NavigationItemProps) {
-  const Icon = item.icon ? (Icons as any)[item.icon] : null
+  const Icon = item.icon ? (Icons as unknown as Record<string, LucideIcon>)[item.icon] : null
   return (
     <SidebarMenuItem>
       <SidebarMenuButton
