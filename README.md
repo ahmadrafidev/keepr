@@ -10,7 +10,7 @@ Keepr is your all-in-one digital saving solution, designed to help you capture, 
   - [Features](#features)
   - [Use Cases](#use-cases)
   - [Development](#development)
-    - [Connect](#connect)
+  - [Connect](#connect)
 
 ## Overview
 
@@ -49,7 +49,7 @@ Keepr is built with modern web technologies:
 ---
 
 
-### Connect 
+## Connect 
 
 Have questions or want to stay updated? Follow me on Twitter:
 - [@rafiwiranaa](https://x.com/rafiwiranaa)
