@@ -13,6 +13,7 @@ import {
   SidebarMenu,
 } from '@/components/ui/sidebar'
 import { Button } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 import { CustomSidebarProps, DEFAULT_SIDEBAR_CONFIG } from './types/sidebar'
 import { NavigationItem } from './sidebar/navigation-item'
@@ -30,7 +31,7 @@ const SidebarClient = ({
 
   return (
     <Sidebar 
-      className={`fixed top-0 left-0 h-screen z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 h-screen z-50 transition-all duration-300 flex flex-col ${
         isCollapsed ? 'w-[70px]' : 'w-[240px]'
       }`}
       aria-label="Main navigation"
@@ -53,7 +54,7 @@ const SidebarClient = ({
         </Button>
       </div>
 
-      <SidebarContent className="py-4">
+      <SidebarContent className="py-4 flex-1">
         {sections.map((section, sIdx) => (
           <SidebarGroup key={`section-${sIdx}`} className="mb-4">
             {!isCollapsed && section.title && (
@@ -82,6 +83,13 @@ const SidebarClient = ({
           </SidebarGroup>
         ))}
       </SidebarContent>
+
+      <div className="p-4 border-t">
+        <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'}`}>
+          {!isCollapsed && <span className="text-sm text-muted-foreground">Theme</span>}
+          <ThemeToggle />
+        </div>
+      </div>
     </Sidebar>
   )
 }
