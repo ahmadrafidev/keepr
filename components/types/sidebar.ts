@@ -21,7 +21,7 @@ export const DEFAULT_SIDEBAR_CONFIG: SidebarSection[] = [
     items: [
       { 
         title: 'Home', 
-        path: '/',
+        path: '/home',
         icon: 'Home',
         description: 'Your dashboard'
       },
