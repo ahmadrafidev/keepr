@@ -31,19 +31,20 @@ const SidebarClient = ({
 
   return (
     <Sidebar 
-      className={`fixed top-0 left-0 h-screen z-50 transition-all duration-300 flex flex-col ${
+      className={`fixed top-0 left-0 h-screen z-50 transition-all duration-300 flex flex-col
+        bg-background border-r ${
         isCollapsed ? 'w-[70px]' : 'w-[240px]'
       }`}
       aria-label="Main navigation"
     >
       <div className="p-4 flex items-center justify-between">
-        <div className={`font-semibold text-2xl ${isCollapsed ? 'hidden' : 'block'}`}>
+        <div className={`font-semibold text-2xl text-foreground ${isCollapsed ? 'hidden' : 'block'}`}>
           Keepr
         </div>
         <Button
           variant="ghost"
           size="icon"
-          className="h-8 w-8"
+          className="h-8 w-8 hover:bg-accent hover:text-accent-foreground"
           onClick={onToggleCollapse}
           aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         >
@@ -84,7 +85,7 @@ const SidebarClient = ({
         ))}
       </SidebarContent>
 
-      <div className="p-4 border-t">
+      <div className="p-4 border-t bg-background">
         <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'}`}>
           {!isCollapsed && <span className="text-sm text-muted-foreground">Theme</span>}
           <ThemeToggle />

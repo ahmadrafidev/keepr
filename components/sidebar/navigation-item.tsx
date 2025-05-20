@@ -46,8 +46,8 @@ export function NavigationItem({
       <IconComponent
         className={`h-5 w-5 transition-colors ${
           isActive
-            ? 'text-white'
-            : 'text-muted-foreground group-hover:text-accent-foreground'
+            ? 'text-inherit'
+            : 'text-muted-foreground group-hover:text-foreground'
         }`}
       />
       {!isCollapsed && <span className="ml-2">{item.title}</span>}
@@ -63,8 +63,8 @@ export function NavigationItem({
       isActive={isActive}
       className={`group flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
         isActive
-          ? 'bg-black text-white'
-          : 'hover:bg-accent hover:text-accent-foreground'
+          ? 'bg-primary text-primary-foreground'
+          : 'text-foreground hover:bg-accent hover:text-accent-foreground'
       } ${isCollapsed ? 'justify-center' : ''}`}
     >
       {item.external ? (
@@ -97,7 +97,10 @@ export function NavigationItem({
         <TooltipTrigger asChild>
           <SidebarMenuItem>{button}</SidebarMenuItem>
         </TooltipTrigger>
-        <TooltipContent side="right" className="bg-black text-white">
+        <TooltipContent 
+          side="right" 
+          className="bg-popover text-popover-foreground"
+        >
           {item.title}
         </TooltipContent>
       </Tooltip>
