@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo, useMemo } from 'react'
 import Link from 'next/link'
 import * as Icons from 'lucide-react'
 
@@ -9,7 +9,6 @@ import {
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 
@@ -23,89 +22,106 @@ interface NavigationItemProps {
 
 type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>>
 
+const iconCache = new Map<string, IconType>()
+
 function resolveIcon(name?: string): IconType {
   if (!name) return Icons.Circle
+  
+  if (iconCache.has(name)) {
+    return iconCache.get(name)!
+  }
 
   const key = name
     .split('-')
     .map(p => p.charAt(0).toUpperCase() + p.slice(1))
     .join('') as keyof typeof Icons
 
-  return (Icons[key] as IconType) ?? Icons.Circle
+  const icon = (Icons[key] as IconType) ?? Icons.Circle
+  
+  iconCache.set(name, icon)
+  return icon
 }
 
-export function NavigationItem({
+export const NavigationItem = memo<NavigationItemProps>(function NavigationItem({
   item,
   isActive,
   isCollapsed,
-}: NavigationItemProps) {
-  const IconComponent = resolveIcon(item.icon)
+}) {
+  const IconComponent = useMemo(() => resolveIcon(item.icon), [item.icon])
 
-  const content = (
+  const content = useMemo(() => (
     <>
       <IconComponent
         className={`h-5 w-5 transition-colors ${
           isActive
-            ? 'text-inherit'
-            : 'text-muted-foreground group-hover:text-foreground'
+            ? 'text-gray-900 dark:text-gray-100'
+            : 'text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-200'
         }`}
       />
       {!isCollapsed && <span className="ml-2">{item.title}</span>}
       {!isCollapsed && item.external && (
-        <Icons.ExternalLink className="ml-auto h-3 w-3 text-muted-foreground" />
+        <Icons.ExternalLink className="ml-auto h-3 w-3 text-gray-400 dark:text-gray-500" />
       )}
     </>
+  ), [IconComponent, isActive, isCollapsed, item.title, item.external])
+
+  const buttonClasses = useMemo(() => 
+    `group flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+      isActive
+        ? 'bg-gray-100 text-gray-900 dark:bg-zinc-800 dark:text-gray-100'
+        : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-zinc-800/50 hover:text-gray-900 dark:hover:text-gray-100'
+    } ${isCollapsed ? 'justify-center' : ''}`,
+    [isActive, isCollapsed]
   )
 
-  const button = (
+  const linkClasses = useMemo(() => 
+    `flex w-full items-center ${isCollapsed ? 'justify-center' : ''}`,
+    [isCollapsed]
+  )
+
+  const button = useMemo(() => (
     <SidebarMenuButton
       asChild
       isActive={isActive}
-      className={`group flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-        isActive
-          ? 'bg-black text-white dark:bg-zinc-600 dark:text-white'
-          : 'text-foreground hover:bg-zinc-700 hover:text-accent-foreground'
-      } ${isCollapsed ? 'justify-center' : ''}`}
+      className={buttonClasses}
     >
       {item.external ? (
         <Link
           href={item.path || '#'}
           target="_blank"
           rel="noopener noreferrer"
-          className={`flex w-full items-center ${
-            isCollapsed ? 'justify-center' : ''
-          }`}
+          className={linkClasses}
         >
           {content}
         </Link>
       ) : (
         <Link
           href={item.path || '#'}
-          className={`flex w-full items-center ${
-            isCollapsed ? 'justify-center' : ''
-          }`}
+          className={linkClasses}
         >
           {content}
         </Link>
       )}
     </SidebarMenuButton>
-  )
+  ), [isActive, buttonClasses, item.external, item.path, linkClasses, content])
 
-  return isCollapsed ? (
-    <TooltipProvider>
+  if (isCollapsed) {
+    return (
       <Tooltip>
         <TooltipTrigger asChild>
           <SidebarMenuItem>{button}</SidebarMenuItem>
         </TooltipTrigger>
         <TooltipContent 
           side="right" 
-          className="bg-popover text-popover-foreground"
+          className="bg-gray-900 text-gray-100 dark:bg-gray-100 dark:text-gray-900 border-gray-700 dark:border-gray-300"
         >
           {item.title}
         </TooltipContent>
       </Tooltip>
-    </TooltipProvider>
-  ) : (
-    <SidebarMenuItem>{button}</SidebarMenuItem>
-  )
-}
+    )
+  }
+
+  return <SidebarMenuItem>{button}</SidebarMenuItem>
+})
+
+NavigationItem.displayName = 'NavigationItem'

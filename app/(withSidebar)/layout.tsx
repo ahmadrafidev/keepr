@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useState, useCallback } from 'react';
+import { ReactNode, useState, useCallback, useMemo } from 'react';
 import CustomSidebar from '@/components/custom-sidebar';
 import { SidebarProvider } from '@/components/ui/sidebar';
 
@@ -15,6 +15,19 @@ export default function WithSidebarLayout({ children }: WithSidebarLayoutProps) 
     setIsSidebarCollapsed(prev => !prev);
   }, []);
 
+  const mainContentClasses = useMemo(() => 
+    "flex-1 transition-all duration-300",
+    []
+  );
+
+  const mainContent = useMemo(() => (
+    <div className={mainContentClasses}>
+      <main className="p-6 max-w-6xl mx-auto">
+        {children}
+      </main>
+    </div>
+  ), [children, mainContentClasses]);
+
   return (
     <SidebarProvider defaultOpen={!isSidebarCollapsed}>
       <div className="flex min-h-screen">
@@ -22,13 +35,7 @@ export default function WithSidebarLayout({ children }: WithSidebarLayoutProps) 
           isCollapsed={isSidebarCollapsed}
           onToggleCollapse={handleToggleSidebarCollapse}
         />
-        <div 
-          className="flex-1 transition-all duration-300"
-        >
-          <main className="p-6 max-w-6xl mx-auto">
-            {children}
-          </main>
-        </div>
+        {mainContent}
       </div>
     </SidebarProvider>
   );
