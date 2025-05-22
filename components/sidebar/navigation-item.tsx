@@ -63,12 +63,12 @@ export function NavigationItem({
       isActive={isActive}
       className={`group flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
         isActive
-          ? 'bg-primary text-primary-foreground'
+          ? 'bg-black text-white dark:bg-white dark:text-black'
           : 'text-foreground hover:bg-accent hover:text-accent-foreground'
       } ${isCollapsed ? 'justify-center' : ''}`}
     >
       {item.external ? (
-        <a
+        <Link
           href={item.path}
           target="_blank"
           rel="noopener noreferrer"
@@ -77,7 +77,7 @@ export function NavigationItem({
           }`}
         >
           {content}
-        </a>
+        </Link>
       ) : (
         <Link
           href={item.path || '#'}

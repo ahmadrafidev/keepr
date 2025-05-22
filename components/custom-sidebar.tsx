@@ -85,31 +85,40 @@ const SidebarClient = ({
         ))}
       </SidebarContent>
 
-      <div className="p-4 border-t bg-background">
-        <div className={`flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'}`}>
-          {!isCollapsed && <span className="text-sm text-muted-foreground">Theme</span>}
-          <ThemeToggle />
+      <div className="p-1 border-t bg-background">
+        <div className={`
+          flex items-center gap-2
+          ${isCollapsed ? 'justify-center' : 'px-2 py-1 rounded-md hover:bg-accent transition-colors'}
+        `}>
+          <ThemeToggle align={isCollapsed ? "end" : "start"} />
+          {!isCollapsed && (
+            <span className="text-sm text-muted-foreground flex-1">
+              Switch theme
+            </span>
+          )}
         </div>
       </div>
     </Sidebar>
   )
 }
 
-export default function CustomSidebar({ sidebarConfig }: CustomSidebarProps) {
+export default function CustomSidebar({ 
+  sidebarConfig,
+  isCollapsed,
+  onToggleCollapse
+}: CustomSidebarProps & {
+  isCollapsed: boolean;
+  onToggleCollapse: () => void;
+}) {
   const [sections] = useState<NonNullable<CustomSidebarProps['sidebarConfig']>>(
     sidebarConfig?.length ? sidebarConfig : DEFAULT_SIDEBAR_CONFIG
   )
-  const [isCollapsed, setIsCollapsed] = useState(false)
-
-  const handleToggleCollapse = useCallback(() => {
-    setIsCollapsed(prev => !prev)
-  }, [])
 
   return (
     <SidebarClient 
       sections={sections}
       isCollapsed={isCollapsed}
-      onToggleCollapse={handleToggleCollapse}
+      onToggleCollapse={onToggleCollapse}
     />
   )
 }

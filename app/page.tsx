@@ -27,7 +27,6 @@ export default function Home() {
 
       <header className="container flex h-20 items-center justify-between px-4 md:px-8 relative z-10">
         <Link passHref href="/" className="flex flex-row items-center gap-1 font-bold">
-          <Bookmark className="h-10 w-8 text-gray-900 dark:text-white" />
           <span className="text-4xl tracking-tighter text-gray-900 dark:text-white">Keepr</span>
         </Link>
         <div className="flex items-center gap-4">
