@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { PanelLeft } from 'lucide-react'
 

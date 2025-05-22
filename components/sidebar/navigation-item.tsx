@@ -69,7 +69,7 @@ export function NavigationItem({
     >
       {item.external ? (
         <Link
-          href={item.path}
+          href={item.path || '#'}
           target="_blank"
           rel="noopener noreferrer"
           className={`flex w-full items-center ${
