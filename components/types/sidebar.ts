@@ -170,6 +170,7 @@ export const DEFAULT_SIDEBAR_CONFIG: SidebarSection[] = [
     items: [
       { title: 'Twitter', path: 'https://x.com/rafiwiranaa', icon: 'Twitter', external: true },
       { title: 'GitHub', path: 'https://github.com/ahmadrafidev', icon: 'Github', external: true },
+      { title: 'LinkedIn', path: 'https://www.linkedin.com/in/ahmadrafiwirana/', icon: 'Linkedin', external: true },
     ],
   },
 ];

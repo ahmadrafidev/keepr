@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Blog | Keepr',
+  title: 'Blog',
   description: 'Manage your articles and drafts',
 }
 

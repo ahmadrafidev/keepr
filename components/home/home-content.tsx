@@ -20,26 +20,6 @@ export function HomeContent({ className }: HomeContentProps) {
           using modern technologies like React, Next.js, and TypeScript. When I&apos;m not coding, you&apos;ll find me reading tech blogs, 
           contributing to open source, or exploring new coffee shops.
         </p>
-        <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="https://github.com" target="_blank">
-              <GithubIcon className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="https://linkedin.com" target="_blank">
-              <LinkedinIcon className="h-5 w-5" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="https://twitter.com" target="_blank">
-              <TwitterIcon className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
-            </Link>
-          </Button>
-        </div>
       </div>
 
       {/* About Section */}

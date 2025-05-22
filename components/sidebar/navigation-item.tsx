@@ -63,8 +63,8 @@ export function NavigationItem({
       isActive={isActive}
       className={`group flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
         isActive
-          ? 'bg-black text-white dark:bg-white dark:text-black'
-          : 'text-foreground hover:bg-accent hover:text-accent-foreground'
+          ? 'bg-black text-white dark:bg-zinc-600 dark:text-white'
+          : 'text-foreground hover:bg-zinc-700 hover:text-accent-foreground'
       } ${isCollapsed ? 'justify-center' : ''}`}
     >
       {item.external ? (
