@@ -16,8 +16,8 @@ import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { TooltipProvider } from '@/components/ui/tooltip'
 
-import { CustomSidebarProps, DEFAULT_SIDEBAR_CONFIG } from './types/sidebar'
-import { NavigationItem } from './sidebar/navigation-item'
+import { CustomSidebarProps, DEFAULT_SIDEBAR_CONFIG } from '../types/sidebar'
+import { NavigationItem } from './navigation-item'
 
 const SidebarSection = memo<{
   section: NonNullable<CustomSidebarProps['sidebarConfig']>[0]

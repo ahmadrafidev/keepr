@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode, useState, useCallback, useMemo } from 'react';
-import CustomSidebar from '@/components/custom-sidebar';
+import CustomSidebar from '@/components/sidebar/custom-sidebar';
 import { SidebarProvider } from '@/components/ui/sidebar';
 
 interface WithSidebarLayoutProps {
