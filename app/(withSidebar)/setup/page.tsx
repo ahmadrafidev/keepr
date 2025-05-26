@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Monitor, Cpu, HardDrive, Zap, Headphones, Keyboard, Mouse, Wifi, Settings, CheckCircle, Star, ExternalLink } from 'lucide-react'
+import { Monitor, Cpu, Keyboard, Settings, CheckCircle, Star, ExternalLink } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Setup',

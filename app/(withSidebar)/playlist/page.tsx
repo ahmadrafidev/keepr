@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Music, Headphones, Play, Pause, SkipForward, Volume2, Clock, Star, ExternalLink, Mic, Radio, Heart } from 'lucide-react'
+import { Music, Play, Pause, SkipForward, Volume2, Clock, Star, Mic, Radio, Heart } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Playlist',

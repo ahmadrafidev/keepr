@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { ExternalLink, Star, Download, Heart, Code, Palette, Database, Terminal, Globe, Smartphone } from 'lucide-react'
+import { ExternalLink, Star, Download, Heart, Code, Palette, Database, Terminal, Globe } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Tools',

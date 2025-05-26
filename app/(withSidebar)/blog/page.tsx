@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Calendar, Clock, Eye, Heart, MessageCircle, Search, Tag, TrendingUp, User, Edit, Plus, Filter } from 'lucide-react'
+import { Calendar, Clock, Eye, Heart, MessageCircle, Search, Tag, TrendingUp, Edit, Plus, Filter } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Blog',

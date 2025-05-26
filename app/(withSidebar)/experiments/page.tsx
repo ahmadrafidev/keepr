@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { ExternalLink, Github, Play, Code, Palette, Zap, Smartphone, Monitor, Calendar, Star, Eye } from 'lucide-react'
+import { Play, Code, Palette, Zap, Monitor, Calendar, Star, Eye } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Experiments',
@@ -219,7 +219,6 @@ const statusColors = {
 export default function ExperimentsPage() {
   const completedExperiments = experiments.filter(exp => exp.status === 'Completed').length
   const totalViews = experiments.reduce((sum, exp) => sum + exp.views, 0)
-  const totalLikes = experiments.reduce((sum, exp) => sum + exp.likes, 0)
   const starredExperiments = experiments.filter(exp => exp.isStarred).length
 
   return (
@@ -388,7 +387,7 @@ export default function ExperimentsPage() {
               Learn by Building
             </h4>
             <p className="text-sm text-muted-foreground">
-              Every experiment is an opportunity to learn new technologies, explore different approaches, and push the boundaries of what's possible.
+              Every experiment is an opportunity to learn new technologies, explore different approaches, and push the boundaries of what&apos;s possible.
             </p>
           </div>
           <div>

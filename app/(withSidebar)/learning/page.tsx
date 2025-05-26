@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { BookOpen, Target, Clock, CheckCircle, PlayCircle, ExternalLink, TrendingUp, Award, Calendar } from 'lucide-react'
+import { BookOpen, Target, Clock, PlayCircle, ExternalLink, TrendingUp, Award, Calendar } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Learning',

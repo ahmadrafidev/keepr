@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { ExternalLink, Twitter, Github, Globe, Heart, Star, Users, Code, Palette, Lightbulb } from 'lucide-react'
+import { Twitter, Github, Globe, Heart, Star, Users, Code, Palette, Lightbulb } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Inspirations',
@@ -367,7 +367,7 @@ export default function InspirationsPage() {
               Technical Excellence
             </h4>
             <p className="text-sm text-muted-foreground">
-              People who push the boundaries of what's possible with technology, create innovative solutions, and share their knowledge with the community.
+              People who push the boundaries of what&apos;s possible with technology, create innovative solutions, and share their knowledge with the community.
             </p>
           </div>
           <div>

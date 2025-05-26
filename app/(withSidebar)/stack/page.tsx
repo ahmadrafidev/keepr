@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Code, Database, Globe, Smartphone, Server, Palette, Shield, Zap, Heart, Star } from 'lucide-react'
+import { Code, Database, Globe, Smartphone, Server, Palette, Shield, Heart, Star } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Stack',

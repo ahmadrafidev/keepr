@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { BookOpen, ExternalLink, Star, Clock, CheckCircle, Bookmark, TrendingUp, User, Calendar } from 'lucide-react'
+import { BookOpen, Star, Clock, CheckCircle, TrendingUp, User } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Reading List',
@@ -15,7 +15,47 @@ const readingCategories = [
   { name: 'Design', count: 4, active: false },
 ]
 
-const books = [
+interface Book {
+  id: number
+  title: string
+  author: string
+  type: 'Book'
+  category: string
+  status: string
+  progress: number
+  totalPages: number
+  currentPage: number
+  rating: number
+  dateStarted: string
+  estimatedFinish?: string
+  dateCompleted?: string
+  description: string
+  cover: string
+  tags: string[]
+  notes: string
+  isRecommended: boolean
+}
+
+interface Article {
+  id: number
+  title: string
+  author: string
+  type: 'Article'
+  category: string
+  status: string
+  url: string
+  readTime: string
+  dateRead: string
+  rating: number
+  description: string
+  tags: string[]
+  notes: string
+  isBookmarked: boolean
+}
+
+type ReadingItem = Book | Article
+
+const books: Book[] = [
   {
     id: 1,
     title: 'Designing Data-Intensive Applications',
@@ -75,7 +115,7 @@ const books = [
   }
 ]
 
-const articles = [
+const articles: Article[] = [
   {
     id: 1,
     title: 'React Server Components: A Comprehensive Guide',
@@ -110,9 +150,9 @@ const articles = [
   }
 ]
 
-const allItems = [...books, ...articles].sort((a, b) => {
-  const dateA = new Date(a.dateStarted || a.dateRead || a.dateAdded || '2024-01-01')
-  const dateB = new Date(b.dateStarted || b.dateRead || b.dateAdded || '2024-01-01')
+const allItems: ReadingItem[] = [...books, ...articles].sort((a, b) => {
+  const dateA = new Date((a as Book).dateStarted || (a as Article).dateRead || '2024-01-01')
+  const dateB = new Date((b as Book).dateStarted || (b as Article).dateRead || '2024-01-01')
   return dateB.getTime() - dateA.getTime()
 })
 
@@ -183,7 +223,7 @@ export default function ReadingPage() {
                 className="bg-card border rounded-lg p-6 hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="text-3xl">{item.type === 'Book' ? (item as any).cover : '📄'}</div>
+                  <div className="text-3xl">{item.type === 'Book' ? (item as Book).cover : '📄'}</div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
@@ -202,7 +242,7 @@ export default function ReadingPage() {
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm font-medium">Progress</span>
                       <span className="text-sm text-muted-foreground">
-                        {(item as any).currentPage}/{(item as any).totalPages} pages
+                        {(item as Book).currentPage}/{(item as Book).totalPages} pages
                       </span>
                     </div>
                     <div className="w-full bg-secondary rounded-full h-2">
@@ -225,9 +265,9 @@ export default function ReadingPage() {
                   ))}
                 </div>
 
-                {(item as any).notes && (
+                {(item as Book).notes && (
                   <div className="bg-secondary/50 rounded-lg p-3">
-                    <p className="text-sm text-muted-foreground italic">"{(item as any).notes}"</p>
+                    <p className="text-sm text-muted-foreground italic">&quot;{(item as Book).notes}&quot;</p>
                   </div>
                 )}
               </div>
@@ -246,7 +286,7 @@ export default function ReadingPage() {
               className="bg-card border rounded-lg p-4 hover:shadow-md transition-shadow"
             >
               <div className="flex items-start gap-3 mb-3">
-                <div className="text-2xl">{item.type === 'Book' ? (item as any).cover : '📄'}</div>
+                <div className="text-2xl">{item.type === 'Book' ? (item as Book).cover : '📄'}</div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-sm mb-1 line-clamp-2">{item.title}</h3>
                   <div className="flex items-center gap-1 text-xs text-muted-foreground mb-2">
@@ -278,7 +318,7 @@ export default function ReadingPage() {
               <div className="flex items-center justify-between text-xs text-muted-foreground">
                 <span className="bg-secondary px-2 py-1 rounded">{item.category}</span>
                 <span>
-                  {new Date((item as any).dateCompleted || (item as any).dateRead || '').toLocaleDateString()}
+                  {new Date((item as Book).dateCompleted || (item as Article).dateRead || '').toLocaleDateString()}
                 </span>
               </div>
             </div>
