@@ -177,23 +177,48 @@ export default function NotesPage() {
         })}
       </div>
 
-      {/* Quick Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t">
-        <div className="text-center">
-          <div className="text-2xl font-bold text-primary">24</div>
-          <div className="text-sm text-muted-foreground">Total Notes</div>
+      {/* Notes Summary Card */}
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border rounded-lg p-6">
+        <h3 className="font-semibold mb-4 flex items-center gap-2">
+          <BookOpen className="h-5 w-5 text-primary" />
+          Notes Overview
+        </h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="bg-white/50 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-primary">24</div>
+            <div className="text-sm text-muted-foreground">Total Notes</div>
+          </div>
+          <div className="bg-white/50 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-primary">3</div>
+            <div className="text-sm text-muted-foreground">Pinned</div>
+          </div>
+          <div className="bg-white/50 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-primary">4</div>
+            <div className="text-sm text-muted-foreground">Categories</div>
+          </div>
+          <div className="bg-white/50 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-primary">18</div>
+            <div className="text-sm text-muted-foreground">Tags</div>
+          </div>
         </div>
-        <div className="text-center">
-          <div className="text-2xl font-bold text-primary">3</div>
-          <div className="text-sm text-muted-foreground">Pinned</div>
-        </div>
-        <div className="text-center">
-          <div className="text-2xl font-bold text-primary">4</div>
-          <div className="text-sm text-muted-foreground">Categories</div>
-        </div>
-        <div className="text-center">
-          <div className="text-2xl font-bold text-primary">18</div>
-          <div className="text-sm text-muted-foreground">Tags</div>
+        
+        <div className="mt-6 pt-4 border-t border-white/20">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium">Recent Activity</p>
+              <p className="text-xs text-muted-foreground">Last note added 2 hours ago</p>
+            </div>
+            <div className="flex gap-2">
+              <button className="flex items-center gap-2 px-3 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm">
+                <Plus className="h-3 w-3" />
+                Quick Note
+              </button>
+              <button className="flex items-center gap-2 px-3 py-2 bg-white/70 text-gray-700 rounded-lg hover:bg-white/90 transition-colors text-sm">
+                <Search className="h-3 w-3" />
+                Search All
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

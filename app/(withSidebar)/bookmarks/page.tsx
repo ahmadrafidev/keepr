@@ -242,6 +242,29 @@ export default function BookmarksPage() {
         </div>
       </div>
 
+      {/* Quick Actions */}
+      <div className="bg-gradient-to-r from-primary/10 to-primary/5 border rounded-lg p-6">
+        <h3 className="font-semibold mb-3">Quick Actions</h3>
+        <div className="flex flex-wrap gap-3">
+          <button className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
+            <Bookmark className="h-4 w-4" />
+            Add Bookmark
+          </button>
+          <button className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors">
+            <Star className="h-4 w-4" />
+            View Starred
+          </button>
+          <button className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors">
+            <Tag className="h-4 w-4" />
+            Manage Tags
+          </button>
+          <button className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors">
+            <ExternalLink className="h-4 w-4" />
+            Export Bookmarks
+          </button>
+        </div>
+      </div>
+
       {/* Search and Filters */}
       <div className="flex flex-col lg:flex-row gap-4">
         <div className="relative flex-1">
@@ -432,28 +455,6 @@ export default function BookmarksPage() {
         </div>
       </div>
 
-      {/* Quick Actions */}
-      <div className="bg-gradient-to-r from-primary/10 to-primary/5 border rounded-lg p-6">
-        <h3 className="font-semibold mb-3">Quick Actions</h3>
-        <div className="flex flex-wrap gap-3">
-          <button className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
-            <Bookmark className="h-4 w-4" />
-            Add Bookmark
-          </button>
-          <button className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors">
-            <Star className="h-4 w-4" />
-            View Starred
-          </button>
-          <button className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors">
-            <Tag className="h-4 w-4" />
-            Manage Tags
-          </button>
-          <button className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors">
-            <ExternalLink className="h-4 w-4" />
-            Export Bookmarks
-          </button>
-        </div>
-      </div>
     </div>
   )
 } 
