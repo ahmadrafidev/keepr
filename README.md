@@ -43,7 +43,7 @@ Keepr is a personal digital workspace that combines the functionality of a bookm
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/keepr.git
+   git clone https://github.com/ahmadrafidev/keepr.git
    cd keepr
    ```
 
