@@ -48,7 +48,7 @@ export function ThemeToggle({ align = "end" }: { align?: "start" | "end" }) {
             <Sun className="h-4 w-4 text-orange-500" />
             <span>Light</span>
           </div>
-          {theme === "light" && <Check className="h-4 w-4" />}
+          {theme === "light" && <Check className="h-5 w-5" />}
         </DropdownMenuItem>
         <DropdownMenuItem 
           onClick={() => setTheme("dark")}
@@ -58,7 +58,7 @@ export function ThemeToggle({ align = "end" }: { align?: "start" | "end" }) {
             <Moon className="h-4 w-4 text-blue-500" />
             <span>Dark</span>
           </div>
-          {theme === "dark" && <Check className="h-4 w-4" />}
+          {theme === "dark" && <Check className="h-5 w-5" />}
         </DropdownMenuItem>
         <DropdownMenuItem 
           onClick={() => setTheme("system")}
@@ -68,7 +68,7 @@ export function ThemeToggle({ align = "end" }: { align?: "start" | "end" }) {
             <Laptop className="h-4 w-4 text-gray-500" />
             <span>System</span>
           </div>
-          {theme === "system" && <Check className="h-4 w-4" />}
+          {theme === "system" && <Check className="h-5 w-5" />}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
