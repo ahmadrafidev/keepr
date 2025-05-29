@@ -29,16 +29,16 @@ export default function Home() {
           
           <div className="flex items-center gap-3 lg:gap-4 animate-slide-in-right">
             <ThemeToggle />
-            <Button
-              size="lg"
-              className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-black border-0 rounded-lg px-3 lg:px-4 shadow-sm hover:shadow-md transition-all duration-300 focus-ring"
-            >
-              <Link href="/home" className="flex items-center gap-1.5">
+            <Link href="/home">
+              <Button
+                size="lg"
+                className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-black border-0 rounded-lg px-3 lg:px-4 shadow-sm hover:shadow-md transition-all duration-300 focus-ring flex items-center gap-1.5"
+              >
                 <span className="hidden sm:inline text-sm font-medium">Get Started</span>
                 <span className="sm:hidden text-sm font-medium">Start</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
         </div>
       </header>
