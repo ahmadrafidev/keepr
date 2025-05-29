@@ -8,20 +8,20 @@ import { Footer } from "@/components/footer"
 
 export default function About() {
   return (
-    <div className="flex min-h-screen flex-col items-center relative bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-950 dark:via-black dark:to-blue-950 overflow-hidden">
+    <div className="min-h-screen grid grid-rows-[auto_1fr_auto] bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-950 dark:via-black dark:to-blue-950 overflow-hidden">
       {/* background gradients */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 -left-40 w-80 h-80 bg-purple-300 dark:bg-purple-600 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-xl opacity-20 animate-float" />
-        <div className="absolute top-40 -right-40 w-80 h-80 bg-yellow-300 dark:bg-yellow-600 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-xl opacity-20 animate-float animation-delay-1000" />
-        <div className="absolute -bottom-40 left-40 w-80 h-80 bg-pink-300 dark:bg-pink-600 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-xl opacity-20 animate-float animation-delay-2000" />
+        <div className="absolute top-0 -left-40 w-80 h-80 bg-purple-400 dark:bg-purple-700 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-xl opacity-20 animate-float" />
+        <div className="absolute top-40 -right-40 w-80 h-80 bg-yellow-400 dark:bg-yellow-700 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-xl opacity-20 animate-float animation-delay-1000" />
+        <div className="absolute -bottom-40 left-40 w-80 h-80 bg-pink-400 dark:bg-pink-700 rounded-full mix-blend-multiply dark:mix-blend-normal filter blur-xl opacity-20 animate-float animation-delay-2000" />
       </div>
 
       <Navigation />
 
       {/* Main Content */}
-      <main className="flex-1 w-full relative z-10">
-        <section className="container px-4 md:px-6 lg:px-8 py-12 md:py-20 lg:py-32">
-          <div className="max-w-4xl mx-auto text-center space-y-8 lg:space-y-12">
+      <main className="w-full grid place-items-center relative z-10">
+        <div className="w-full max-w-4xl mx-auto px-4 md:px-6 py-12 md:py-20 lg:py-32">
+          <div className="text-center space-y-8 lg:space-y-12">
             {/* Page heading */}
             <div className="space-y-4 lg:space-y-6 animate-fade-in-up">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-gray-900 dark:text-gray-100">
@@ -66,7 +66,7 @@ export default function About() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </main>
 
       <Footer />

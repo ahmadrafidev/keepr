@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 export function Navigation() {
   return (
     <header className="w-full sticky top-0 z-50 animate-slide-in-left">
-      <div className="container flex h-16 lg:h-20 items-center justify-between px-4 md:px-6 lg:px-8">
+      <nav className="w-full max-w-7xl mx-auto flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 group focus-ring rounded-lg p-1">
           <div className="w-7 h-7 lg:w-8 lg:h-8 bg-gray-900 dark:bg-gray-100 rounded-md flex items-center justify-center group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-colors duration-300">
             <Bookmark className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-white dark:text-black" />
@@ -29,7 +29,7 @@ export function Navigation() {
             </Button>
           </Link>
         </div>
-      </div>
+      </nav>
     </header>
   )
 } 

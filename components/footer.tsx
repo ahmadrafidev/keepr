@@ -3,7 +3,7 @@ import Link from "next/link"
 export function Footer() {
   return (
     <footer className="w-full animate-fade-in-up animation-delay-700">
-      <div className="container px-4 md:px-6 lg:px-8 py-6 lg:py-8">
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-6 py-6 lg:py-8">
         <div className="flex flex-col items-center space-y-3 text-center">
           <p className="text-sm text-gray-600 dark:text-gray-400">
             Built with care by{" "}
