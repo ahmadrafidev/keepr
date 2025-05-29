@@ -1,7 +1,9 @@
 import Link from "next/link"
+
+import { ArrowRight, Bookmark } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { ArrowRight, Bookmark } from "lucide-react"
 
 export default function About() {
   return (
@@ -69,7 +71,7 @@ export default function About() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-6">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-black border-0 rounded-full px-8 lg:px-12 py-4 lg:py-6 text-base lg:text-lg font-semibold shadow-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 focus-ring"
+                  className="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-black border-0 rounded-full px-8 lg:px-12 py-4 lg:py-6 text-base lg:text-lg font-semibold shadow-xl hover:shadow-lg transition-all duration-300 hover:ring-2 hover:ring-gray-400 hover:ring-offset-2 dark:hover:ring-gray-500 dark:hover:ring-offset-gray-900 focus-ring"
                 >
                   <Link href="/home" className="flex items-center gap-3">
                     Start Organizing
@@ -80,7 +82,7 @@ export default function About() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto bg-white/70 dark:bg-black/40 backdrop-blur-sm border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-white dark:hover:bg-black/60 hover:border-gray-400 dark:hover:border-gray-500 rounded-full px-8 lg:px-12 py-4 lg:py-6 text-base lg:text-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl focus-ring"
+                  className="w-full sm:w-auto bg-white/70 dark:bg-black/40 backdrop-blur-sm border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-white dark:hover:bg-black/60 hover:border-gray-400 dark:hover:border-gray-500 rounded-full px-8 lg:px-12 py-4 lg:py-6 text-base lg:text-lg font-medium transition-all duration-300 hover:ring-2 hover:ring-gray-400 hover:ring-offset-2 dark:hover:ring-gray-500 dark:hover:ring-offset-gray-900 shadow-lg hover:shadow-xl focus-ring"
                 >
                   <Link href="/">Back to Home</Link>
                 </Button>
